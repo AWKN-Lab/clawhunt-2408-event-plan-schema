@@ -1,0 +1,12 @@
+META PASS schemas/ops/event_plan.v1.json
+PASS /home/hatch/workspace/goals/20/hidden_files/bid-optimize-20261127/2408-build/examples/valid/valid-01.json
+PASS /home/hatch/workspace/goals/20/hidden_files/bid-optimize-20261127/2408-build/examples/valid/valid-02.json
+PASS /home/hatch/workspace/goals/20/hidden_files/bid-optimize-20261127/2408-build/examples/valid/valid-03.json
+PASS /home/hatch/workspace/goals/20/hidden_files/bid-optimize-20261127/2408-build/examples/valid/valid-04.json
+PASS /home/hatch/workspace/goals/20/hidden_files/bid-optimize-20261127/2408-build/examples/valid/valid-05.json
+FAIL(as expected, additionalProperties) /home/hatch/workspace/goals/20/hidden_files/bid-optimize-20261127/2408-build/examples/invalid/invalid-01-price-in-materials.json: materials.0: [additionalProperties] Additional properties are not allowed ('price' was unexpected)
+FAIL(as expected, minItems) /home/hatch/workspace/goals/20/hidden_files/bid-optimize-20261127/2408-build/examples/invalid/invalid-02-risks-too-few.json: risks: [minItems] [{'risk': '报名人数不足', 'likelihood': '中', 'mitigation': '提前两周开放报名并在三个渠道同步宣传'}, {'risk': '分享嘉宾临时缺席', 'likelihood': '低', 'mitigation': '准备一位备用嘉宾并提前确认讲稿'}] is too short
+FAIL(as expected, maxLength) /home/hatch/workspace/goals/20/hidden_files/bid-optimize-20261127/2408-build/examples/invalid/invalid-03-title-too-long.json: title: [maxLength] '春季会员对接会春季会员对接会春季会员对接会春季会员对接会春季会员对接会春季会员对接' is too long
+FAIL(as expected, minItems) /home/hatch/workspace/goals/20/hidden_files/bid-optimize-20261127/2408-build/examples/invalid/invalid-04-agenda-too-few.json: agenda: [minItems] [{'start': '14:00', 'end': '14:10', 'segment': '签到入场', 'purpose': '核对报名信息并发放入场资料', 'format': '开场', 'owner_role': '签到组'}, {'start': '14:10', 'end': '14:20', 'segment': '开场致辞', 'purpose': '介绍活动目标与全天安排', 'format': '开场', 'owner_role': '主持人'}] is too short
+FAIL(as expected, enum) /home/hatch/workspace/goals/20/hidden_files/bid-optimize-20261127/2408-build/examples/invalid/invalid-05-kpi-name-not-in-enum.json: kpis.0.name: [enum] '报名率' is not one of ['报名人数', '到场率', '新增对接意向数', '满意度']
+DEMO: PASS

@@ -1,0 +1,184 @@
+{
+  "title": "季度资源对接专场",
+  "one_liner": "按行业分组的季度对接专场，只做撮合不做演讲",
+  "goal": "每组至少产出 5 组明确的下一步对接",
+  "kpis": [
+    {
+      "name": "报名人数",
+      "target_value": 80
+    },
+    {
+      "name": "到场率",
+      "target_value": 85
+    },
+    {
+      "name": "新增对接意向数",
+      "target_value": 20
+    },
+    {
+      "name": "满意度",
+      "target_value": 90
+    }
+  ],
+  "agenda": [
+    {
+      "start": "13:30",
+      "end": "13:40",
+      "segment": "开场",
+      "purpose": "说明对接规则与分组",
+      "format": "开场",
+      "owner_role": "主持人"
+    },
+    {
+      "start": "13:40",
+      "end": "14:30",
+      "segment": "分组对接一轮",
+      "purpose": "同组企业轮流介绍需求",
+      "format": "对接",
+      "owner_role": "对接组"
+    },
+    {
+      "start": "14:30",
+      "end": "14:45",
+      "segment": "茶歇",
+      "purpose": "换组与自由交流",
+      "format": "茶歇",
+      "owner_role": "会务组"
+    },
+    {
+      "start": "14:45",
+      "end": "15:35",
+      "segment": "分组对接二轮",
+      "purpose": "跨组撮合供需",
+      "format": "对接",
+      "owner_role": "对接组"
+    },
+    {
+      "start": "15:35",
+      "end": "16:00",
+      "segment": "合影与收尾",
+      "purpose": "公布对接结果并约下一步",
+      "format": "合影",
+      "owner_role": "主持人"
+    }
+  ],
+  "roles": [
+    {
+      "role": "主持人",
+      "tasks": [
+        "控场",
+        "串场",
+        "收尾总结"
+      ],
+      "due": "T-1"
+    },
+    {
+      "role": "分享嘉宾",
+      "tasks": [
+        "提交讲稿",
+        "现场分享",
+        "回答提问"
+      ],
+      "due": "T-7"
+    },
+    {
+      "role": "会务组",
+      "tasks": [
+        "布置场地",
+        "签到",
+        "茶歇"
+      ],
+      "due": "T-3"
+    },
+    {
+      "role": "对接组",
+      "tasks": [
+        "收集意向",
+        "排对接表",
+        "跟进结果"
+      ],
+      "due": "T+1"
+    }
+  ],
+  "materials": [
+    {
+      "name": "签到表",
+      "quantity": 100,
+      "owner_role": "签到组"
+    },
+    {
+      "name": "名牌",
+      "quantity": 100,
+      "owner_role": "会务组"
+    },
+    {
+      "name": "投影仪",
+      "quantity": 1,
+      "owner_role": "会务组"
+    },
+    {
+      "name": "茶歇点心",
+      "quantity": 120,
+      "owner_role": "会务组"
+    }
+  ],
+  "promotion_plan": [
+    {
+      "day": "T-14",
+      "channel": "公众号",
+      "action": "发布活动预告推文"
+    },
+    {
+      "day": "T-7",
+      "channel": "小红书",
+      "action": "发布嘉宾介绍笔记"
+    },
+    {
+      "day": "T-3",
+      "channel": "社群",
+      "action": "在会员群发报名提醒"
+    },
+    {
+      "day": "T-1",
+      "channel": "小程序通知",
+      "action": "推送签到提醒"
+    },
+    {
+      "day": "T+1",
+      "channel": "朋友圈",
+      "action": "发布活动回顾"
+    }
+  ],
+  "risks": [
+    {
+      "risk": "报名人数不足",
+      "likelihood": "中",
+      "mitigation": "提前两周开放报名并在三个渠道同步宣传"
+    },
+    {
+      "risk": "分享嘉宾临时缺席",
+      "likelihood": "低",
+      "mitigation": "准备一位备用嘉宾并提前确认讲稿"
+    },
+    {
+      "risk": "现场网络不稳定",
+      "likelihood": "中",
+      "mitigation": "提前测试网络并准备离线版讲稿"
+    },
+    {
+      "risk": "对接环节冷场",
+      "likelihood": "低",
+      "mitigation": "对接组提前按意向排好配对并现场引导"
+    }
+  ],
+  "signup_suggestion": {
+    "mode": "审核制",
+    "capacity": 60,
+    "waitlist": false
+  },
+  "pending_items": [
+    "确认场地可用时段",
+    "确认分享嘉宾讲稿终稿",
+    "确认茶歇供应商"
+  ]
+}

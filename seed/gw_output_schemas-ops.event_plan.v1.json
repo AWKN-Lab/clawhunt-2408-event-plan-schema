@@ -1,0 +1,309 @@
+{
+  "schema_id": "ops.event_plan",
+  "version": 1,
+  "status": "draft",
+  "changelog": "首版：活动方案输出 Schema（议程、分工、物料、宣传节奏与风险预案）",
+  "json_schema": {
+    "$id": "https://example.invalid/schemas/ops/event_plan.v1.json",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "description": "会员空间平台活动方案输出 Schema：议程、分工、物料、宣传节奏与风险预案。校验后的内容只进入复核队列，不得直接对外发送。顶层保留可选字段 lint_issues，由系统入队前写入，提示词要求模型不输出该字段。",
+    "properties": {
+      "agenda": {
+        "items": {
+          "additionalProperties": false,
+          "properties": {
+            "end": {
+              "description": "结束时间，HH:MM",
+              "pattern": "^([01][0-9]|2[0-3]):[0-5][0-9]$",
+              "type": "string"
+            },
+            "format": {
+              "enum": [
+                "开场",
+                "分享",
+                "圆桌",
+                "互动",
+                "对接",
+                "茶歇",
+                "合影"
+              ],
+              "type": "string"
+            },
+            "owner_role": {
+              "description": "负责角色",
+              "minLength": 1,
+              "type": "string"
+            },
+            "purpose": {
+              "description": "环节目的",
+              "minLength": 1,
+              "type": "string"
+            },
+            "segment": {
+              "description": "环节名称",
+              "minLength": 1,
+              "type": "string"
+            },
+            "start": {
+              "description": "开始时间，HH:MM",
+              "pattern": "^([01][0-9]|2[0-3]):[0-5][0-9]$",
+              "type": "string"
+            }
+          },
+          "required": [
+            "start",
+            "end",
+            "segment",
+            "purpose",
+            "format",
+            "owner_role"
+          ],
+          "type": "object"
+        },
+        "maxItems": 20,
+        "minItems": 3,
+        "type": "array"
+      },
+      "goal": {
+        "description": "活动目标",
+        "minLength": 1,
+        "type": "string"
+      },
+      "kpis": {
+        "items": {
+          "additionalProperties": false,
+          "properties": {
+            "name": {
+              "enum": [
+                "报名人数",
+                "到场率",
+                "新增对接意向数",
+                "满意度"
+              ],
+              "type": "string"
+            },
+            "target_value": {
+              "description": "目标值，整数",
+              "type": "integer"
+            }
+          },
+          "required": [
+            "name",
+            "target_value"
+          ],
+          "type": "object"
+        },
+        "minItems": 1,
+        "type": "array"
+      },
+      "lint_issues": {
+        "description": "顶层保留可选字段，由系统入队前写入，提示词要求模型不输出该字段",
+        "items": {
+          "properties": {
+            "code": {
+              "type": "string"
+            },
+            "message": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "code",
+            "message"
+          ],
+          "type": "object"
+        },
+        "type": "array"
+      },
+      "materials": {
+        "description": "物料清单。additionalProperties 为 false，因此无法出现价格字段，AI 不计算金额。",
+        "items": {
+          "additionalProperties": false,
+          "properties": {
+            "name": {
+              "minLength": 1,
+              "type": "string"
+            },
+            "owner_role": {
+              "minLength": 1,
+              "type": "string"
+            },
+            "quantity": {
+              "description": "数量，非负整数",
+              "minimum": 0,
+              "type": "integer"
+            }
+          },
+          "required": [
+            "name",
+            "quantity",
+            "owner_role"
+          ],
+          "type": "object"
+        },
+        "type": "array"
+      },
+      "one_liner": {
+        "description": "一句话介绍，不超过 60 字",
+        "maxLength": 60,
+        "minLength": 1,
+        "type": "string"
+      },
+      "pending_items": {
+        "description": "待确认事项",
+        "items": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "type": "array"
+      },
+      "promotion_plan": {
+        "items": {
+          "additionalProperties": false,
+          "properties": {
+            "action": {
+              "minLength": 1,
+              "type": "string"
+            },
+            "channel": {
+              "enum": [
+                "公众号",
+                "小红书",
+                "社群",
+                "朋友圈",
+                "小程序通知",
+                "站内通知"
+              ],
+              "type": "string"
+            },
+            "day": {
+              "description": "宣传日，T±N，如 T-14、T+1",
+              "pattern": "^T[+-][0-9]+$",
+              "type": "string"
+            }
+          },
+          "required": [
+            "day",
+            "channel",
+            "action"
+          ],
+          "type": "object"
+        },
+        "minItems": 1,
+        "type": "array"
+      },
+      "risks": {
+        "description": "风险预案，至少 3 项",
+        "items": {
+          "additionalProperties": false,
+          "properties": {
+            "likelihood": {
+              "enum": [
+                "低",
+                "中",
+                "高"
+              ],
+              "type": "string"
+            },
+            "mitigation": {
+              "description": "应对措施",
+              "minLength": 1,
+              "type": "string"
+            },
+            "risk": {
+              "minLength": 1,
+              "type": "string"
+            }
+          },
+          "required": [
+            "risk",
+            "likelihood",
+            "mitigation"
+          ],
+          "type": "object"
+        },
+        "minItems": 3,
+        "type": "array"
+      },
+      "roles": {
+        "items": {
+          "additionalProperties": false,
+          "properties": {
+            "due": {
+              "description": "截止日，T±N，如 T-7、T+1",
+              "pattern": "^T[+-][0-9]+$",
+              "type": "string"
+            },
+            "role": {
+              "minLength": 1,
+              "type": "string"
+            },
+            "tasks": {
+              "items": {
+                "minLength": 1,
+                "type": "string"
+              },
+              "minItems": 1,
+              "type": "array"
+            }
+          },
+          "required": [
+            "role",
+            "tasks",
+            "due"
+          ],
+          "type": "object"
+        },
+        "minItems": 1,
+        "type": "array"
+      },
+      "signup_suggestion": {
+        "additionalProperties": false,
+        "properties": {
+          "capacity": {
+            "description": "名额上限",
+            "minimum": 0,
+            "type": "integer"
+          },
+          "mode": {
+            "description": "报名方式，如先到先得、审核制",
+            "minLength": 1,
+            "type": "string"
+          },
+          "waitlist": {
+            "description": "是否开启候补名单",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "mode",
+          "capacity",
+          "waitlist"
+        ],
+        "type": "object"
+      },
+      "title": {
+        "description": "活动标题，不超过 40 字",
+        "maxLength": 40,
+        "minLength": 1,
+        "type": "string"
+      }
+    },
+    "required": [
+      "title",
+      "one_liner",
+      "goal",
+      "kpis",
+      "agenda",
+      "roles",
+      "materials",
+      "promotion_plan",
+      "risks",
+      "signup_suggestion",
+      "pending_items"
+    ],
+    "title": "活动方案输出 Schema v1",
+    "type": "object"
+  },
+  "schema_sha256": "4c29c9f3cdfc19e3030d5410dd2a39d2c05f455fedcf0e673dc2c3cec6150d45"
+}

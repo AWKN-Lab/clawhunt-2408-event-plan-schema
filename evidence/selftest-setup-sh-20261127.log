@@ -1,0 +1,56 @@
+PY=.venv/bin/python (Python 3.12.3)
+TEST_PY=.venv/bin/python (pytest 9.2.0)
+=== 1/4 演示：元模式 + 5 合法过 + 5 非法败（应 DEMO: PASS）===
+META PASS schemas/ops/event_plan.v1.json
+PASS /home/hatch/workspace/goals/20/hidden_files/bid-optimize-20261127/2408-build/examples/valid/valid-01.json
+PASS /home/hatch/workspace/goals/20/hidden_files/bid-optimize-20261127/2408-build/examples/valid/valid-02.json
+PASS /home/hatch/workspace/goals/20/hidden_files/bid-optimize-20261127/2408-build/examples/valid/valid-03.json
+PASS /home/hatch/workspace/goals/20/hidden_files/bid-optimize-20261127/2408-build/examples/valid/valid-04.json
+PASS /home/hatch/workspace/goals/20/hidden_files/bid-optimize-20261127/2408-build/examples/valid/valid-05.json
+FAIL(as expected, additionalProperties) /home/hatch/workspace/goals/20/hidden_files/bid-optimize-20261127/2408-build/examples/invalid/invalid-01-price-in-materials.json: materials.0: [additionalProperties] Additional properties are not allowed ('price' was unexpected)
+FAIL(as expected, minItems) /home/hatch/workspace/goals/20/hidden_files/bid-optimize-20261127/2408-build/examples/invalid/invalid-02-risks-too-few.json: risks: [minItems] [{'risk': '报名人数不足', 'likelihood': '中', 'mitigation': '提前两周开放报名并在三个渠道同步宣传'}, {'risk': '分享嘉宾临时缺席', 'likelihood': '低', 'mitigation': '准备一位备用嘉宾并提前确认讲稿'}] is too short
+FAIL(as expected, maxLength) /home/hatch/workspace/goals/20/hidden_files/bid-optimize-20261127/2408-build/examples/invalid/invalid-03-title-too-long.json: title: [maxLength] '春季会员对接会春季会员对接会春季会员对接会春季会员对接会春季会员对接会春季会员对接' is too long
+FAIL(as expected, minItems) /home/hatch/workspace/goals/20/hidden_files/bid-optimize-20261127/2408-build/examples/invalid/invalid-04-agenda-too-few.json: agenda: [minItems] [{'start': '14:00', 'end': '14:10', 'segment': '签到入场', 'purpose': '核对报名信息并发放入场资料', 'format': '开场', 'owner_role': '签到组'}, {'start': '14:10', 'end': '14:20', 'segment': '开场致辞', 'purpose': '介绍活动目标与全天安排', 'format': '开场', 'owner_role': '主持人'}] is too short
+FAIL(as expected, enum) /home/hatch/workspace/goals/20/hidden_files/bid-optimize-20261127/2408-build/examples/invalid/invalid-05-kpi-name-not-in-enum.json: kpis.0.name: [enum] '报名率' is not one of ['报名人数', '到场率', '新增对接意向数', '满意度']
+DEMO: PASS
+=== 2/4 自测 pytest ===
+.........................                                                [100%]
+25 passed in 0.22s
+=== 3/4 变异自证（应 MUTATION CHECK: PASS）===
+A 相：原样 pytest 应全过
+A 相通过
+B1 相：删 materials additionalProperties:false，price 测试必须变红
+B1 相通过（price 测试变红）
+B2 相：删 risks minItems:3，risks 测试必须变红
+B2 相通过（risks 测试变红）
+C 相：原始样例与 Schema 的 SHA256 应与变异前一致
+C 相通过（11 个 JSON 文件 SHA256 一致）
+MUTATION CHECK: PASS
+=== 4/4 核对 MANIFEST ===
+.github/workflows/ci.yml: OK
+ACCEPTANCE-EVIDENCE.md: OK
+README.md: OK
+docs/FIELDS.md: OK
+evidence/demo-20261127.log: OK
+evidence/mutation-20261127.log: OK
+evidence/pytest-20261127.log: OK
+examples/invalid/invalid-01-price-in-materials.json: OK
+examples/invalid/invalid-02-risks-too-few.json: OK
+examples/invalid/invalid-03-title-too-long.json: OK
+examples/invalid/invalid-04-agenda-too-few.json: OK
+examples/invalid/invalid-05-kpi-name-not-in-enum.json: OK
+examples/valid/valid-01.json: OK
+examples/valid/valid-02.json: OK
+examples/valid/valid-03.json: OK
+examples/valid/valid-04.json: OK
+examples/valid/valid-05.json: OK
+requirements.txt: OK
+schemas/ops/event_plan.v1.json: OK
+scripts/mutation_check.py: OK
+scripts/validate.py: OK
+seed/gw_output_schemas-ops.event_plan.v1.json: OK
+setup.sh: OK
+src/event_plan/__init__.py: OK
+src/event_plan/validate.py: OK
+tests/test_event_plan.py: OK
+SELFTEST: PASS

@@ -1,0 +1,9 @@
+A 相：原样 pytest 应全过
+A 相通过
+B1 相：删 materials additionalProperties:false，price 测试必须变红
+B1 相通过（price 测试变红）
+B2 相：删 risks minItems:3，risks 测试必须变红
+B2 相通过（risks 测试变红）
+C 相：原始样例与 Schema 的 SHA256 应与变异前一致
+C 相通过（11 个 JSON 文件 SHA256 一致）
+MUTATION CHECK: PASS

@@ -1,0 +1,180 @@
+{
+  "title": "新会员欢迎日",
+  "one_liner": "新会员半日欢迎活动，讲清平台资源怎么用",
+  "goal": "让新会员在一周内完成首次资源对接",
+  "kpis": [
+    {
+      "name": "报名人数",
+      "target_value": 60
+    },
+    {
+      "name": "到场率",
+      "target_value": 90
+    },
+    {
+      "name": "满意度",
+      "target_value": 92
+    }
+  ],
+  "agenda": [
+    {
+      "start": "09:30",
+      "end": "09:40",
+      "segment": "开场",
+      "purpose": "欢迎新会员并介绍议程",
+      "format": "开场",
+      "owner_role": "主持人"
+    },
+    {
+      "start": "09:40",
+      "end": "10:20",
+      "segment": "平台介绍",
+      "purpose": "讲清会员权益与资源入口",
+      "format": "分享",
+      "owner_role": "运营负责人"
+    },
+    {
+      "start": "10:20",
+      "end": "10:40",
+      "segment": "茶歇",
+      "purpose": "新会员互相认识",
+      "format": "茶歇",
+      "owner_role": "会务组"
+    },
+    {
+      "start": "10:40",
+      "end": "11:20",
+      "segment": "互动问答",
+      "purpose": "回答新会员最关心的五个问题",
+      "format": "互动",
+      "owner_role": "运营负责人"
+    },
+    {
+      "start": "11:20",
+      "end": "11:30",
+      "segment": "合影",
+      "purpose": "合影留念并发放新手礼包",
+      "format": "合影",
+      "owner_role": "主持人"
+    }
+  ],
+  "roles": [
+    {
+      "role": "主持人",
+      "tasks": [
+        "控场",
+        "串场",
+        "收尾总结"
+      ],
+      "due": "T-1"
+    },
+    {
+      "role": "分享嘉宾",
+      "tasks": [
+        "提交讲稿",
+        "现场分享",
+        "回答提问"
+      ],
+      "due": "T-7"
+    },
+    {
+      "role": "会务组",
+      "tasks": [
+        "布置场地",
+        "签到",
+        "茶歇"
+      ],
+      "due": "T-3"
+    },
+    {
+      "role": "对接组",
+      "tasks": [
+        "收集意向",
+        "排对接表",
+        "跟进结果"
+      ],
+      "due": "T+1"
+    }
+  ],
+  "materials": [
+    {
+      "name": "签到表",
+      "quantity": 100,
+      "owner_role": "签到组"
+    },
+    {
+      "name": "名牌",
+      "quantity": 100,
+      "owner_role": "会务组"
+    },
+    {
+      "name": "投影仪",
+      "quantity": 1,
+      "owner_role": "会务组"
+    },
+    {
+      "name": "茶歇点心",
+      "quantity": 120,
+      "owner_role": "会务组"
+    }
+  ],
+  "promotion_plan": [
+    {
+      "day": "T-14",
+      "channel": "公众号",
+      "action": "发布活动预告推文"
+    },
+    {
+      "day": "T-7",
+      "channel": "小红书",
+      "action": "发布嘉宾介绍笔记"
+    },
+    {
+      "day": "T-3",
+      "channel": "社群",
+      "action": "在会员群发报名提醒"
+    },
+    {
+      "day": "T-1",
+      "channel": "小程序通知",
+      "action": "推送签到提醒"
+    },
+    {
+      "day": "T+1",
+      "channel": "朋友圈",
+      "action": "发布活动回顾"
+    }
+  ],
+  "risks": [
+    {
+      "risk": "报名人数不足",
+      "likelihood": "中",
+      "mitigation": "提前两周开放报名并在三个渠道同步宣传"
+    },
+    {
+      "risk": "分享嘉宾临时缺席",
+      "likelihood": "低",
+      "mitigation": "准备一位备用嘉宾并提前确认讲稿"
+    },
+    {
+      "risk": "现场网络不稳定",
+      "likelihood": "中",
+      "mitigation": "提前测试网络并准备离线版讲稿"
+    },
+    {
+      "risk": "对接环节冷场",
+      "likelihood": "低",
+      "mitigation": "对接组提前按意向排好配对并现场引导"
+    }
+  ],
+  "signup_suggestion": {
+    "mode": "先到先得",
+    "capacity": 100,
+    "waitlist": true
+  },
+  "pending_items": [
+    "确认场地可用时段",
+    "确认分享嘉宾讲稿终稿",
+    "确认茶歇供应商"
+  ]
+}

@@ -1,0 +1,200 @@
+{
+  "title": "春季会员对接会",
+  "one_liner": "一场半天的供需对接会，帮会员企业找到合作方",
+  "goal": "促成至少 20 组新增对接意向，沉淀可复用的活动模板",
+  "kpis": [
+    {
+      "name": "报名人数",
+      "target_value": 80
+    },
+    {
+      "name": "到场率",
+      "target_value": 85
+    },
+    {
+      "name": "新增对接意向数",
+      "target_value": 20
+    },
+    {
+      "name": "满意度",
+      "target_value": 90
+    }
+  ],
+  "agenda": [
+    {
+      "start": "14:00",
+      "end": "14:10",
+      "segment": "签到入场",
+      "purpose": "核对报名信息并发放入场资料",
+      "format": "开场",
+      "owner_role": "签到组"
+    },
+    {
+      "start": "14:10",
+      "end": "14:20",
+      "segment": "开场致辞",
+      "purpose": "介绍活动目标与全天安排",
+      "format": "开场",
+      "owner_role": "主持人"
+    },
+    {
+      "start": "14:20",
+      "end": "15:00",
+      "segment": "主题分享",
+      "purpose": "分享一个可复制的增长案例",
+      "format": "分享",
+      "owner_role": "分享嘉宾"
+    },
+    {
+      "start": "15:00",
+      "end": "15:20",
+      "segment": "茶歇交流",
+      "purpose": "自由交流并收集名片",
+      "format": "茶歇",
+      "owner_role": "会务组"
+    },
+    {
+      "start": "15:20",
+      "end": "16:00",
+      "segment": "圆桌讨论",
+      "purpose": "围绕三个共性难题分组讨论",
+      "format": "圆桌",
+      "owner_role": "圆桌主持"
+    },
+    {
+      "start": "16:00",
+      "end": "16:40",
+      "segment": "一对一对接",
+      "purpose": "按意向撮合供需双方见面",
+      "format": "对接",
+      "owner_role": "对接组"
+    },
+    {
+      "start": "16:40",
+      "end": "17:00",
+      "segment": "合影收尾",
+      "purpose": "全体合影并公布后续对接安排",
+      "format": "合影",
+      "owner_role": "主持人"
+    }
+  ],
+  "roles": [
+    {
+      "role": "主持人",
+      "tasks": [
+        "控场",
+        "串场",
+        "收尾总结"
+      ],
+      "due": "T-1"
+    },
+    {
+      "role": "分享嘉宾",
+      "tasks": [
+        "提交讲稿",
+        "现场分享",
+        "回答提问"
+      ],
+      "due": "T-7"
+    },
+    {
+      "role": "会务组",
+      "tasks": [
+        "布置场地",
+        "签到",
+        "茶歇"
+      ],
+      "due": "T-3"
+    },
+    {
+      "role": "对接组",
+      "tasks": [
+        "收集意向",
+        "排对接表",
+        "跟进结果"
+      ],
+      "due": "T+1"
+    }
+  ],
+  "materials": [
+    {
+      "name": "签到表",
+      "quantity": 100,
+      "owner_role": "签到组"
+    },
+    {
+      "name": "名牌",
+      "quantity": 100,
+      "owner_role": "会务组"
+    },
+    {
+      "name": "投影仪",
+      "quantity": 1,
+      "owner_role": "会务组"
+    },
+    {
+      "name": "茶歇点心",
+      "quantity": 120,
+      "owner_role": "会务组"
+    }
+  ],
+  "promotion_plan": [
+    {
+      "day": "T-14",
+      "channel": "公众号",
+      "action": "发布活动预告推文"
+    },
+    {
+      "day": "T-7",
+      "channel": "小红书",
+      "action": "发布嘉宾介绍笔记"
+    },
+    {
+      "day": "T-3",
+      "channel": "社群",
+      "action": "在会员群发报名提醒"
+    },
+    {
+      "day": "T-1",
+      "channel": "小程序通知",
+      "action": "推送签到提醒"
+    },
+    {
+      "day": "T+1",
+      "channel": "朋友圈",
+      "action": "发布活动回顾"
+    }
+  ],
+  "risks": [
+    {
+      "risk": "报名人数不足",
+      "likelihood": "中",
+      "mitigation": "提前两周开放报名并在三个渠道同步宣传"
+    },
+    {
+      "risk": "分享嘉宾临时缺席",
+      "likelihood": "低",
+      "mitigation": "准备一位备用嘉宾并提前确认讲稿"
+    },
+    {
+      "risk": "现场网络不稳定",
+      "likelihood": "中",
+      "mitigation": "提前测试网络并准备离线版讲稿"
+    },
+    {
+      "risk": "对接环节冷场",
+      "likelihood": "低",
+      "mitigation": "对接组提前按意向排好配对并现场引导"
+    }
+  ],
+  "signup_suggestion": {
+    "mode": "先到先得",
+    "capacity": 100,
+    "waitlist": true
+  },
+  "pending_items": [
+    "确认场地可用时段",
+    "确认分享嘉宾讲稿终稿",
+    "确认茶歇供应商"
+  ]
+}
